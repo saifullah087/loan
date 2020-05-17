@@ -1,0 +1,14 @@
+
+1. create a repository in github  [loan]
+
+create a folder than go to your file and copy and paste your project folder 
+command line...
+
+> git init
+>git add .
+>git commit -m "inition commit"
+
+> git remote add origin https://github.com/saifullah087/loan.git
+>git push -u origin master      [user=saifullah087@gmail.com pwd Prime@123456]
+
+
