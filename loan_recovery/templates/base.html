@@ -1,0 +1,62 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+      <title>Django People</title>
+  </head>
+  <body>
+
+  <div class="container-fluid">
+    <br>
+      <div class="row">
+
+             <div class="col-2 bg-dark">
+                 <div class="navbar-nav font-italic">
+                     {% if user.is_authenticated %}
+                    <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                    <a class="nav-item nav-link" href="{% url 'profile' %}">profile</a>
+                    <a class="nav-item nav-link" href="{% url 'student' %}">student</a>
+                    <a class="nav-item nav-link" href="{% url 'article' %}">API</a>
+                    <a class="nav-item nav-link" href="{% url 'devprofile' %}">dev_view</a>
+                    <a class="nav-item nav-link" href="{% url 'blog' %}">Model Form</a>
+                     <a class="nav-item nav-link" href="{% url 'student_entry' %}">HTML Form</a>
+                     <a class="nav-item nav-link" href="{% url 'data_update' %}">Update data</a>
+                     <a class="nav-item nav-link" href="{% url 'data_insert' %}">Insert data</a>
+                     <a class="nav-item nav-link" href="{% url 'ReportLabPDF' %}">  PDF report</a>
+                      <a class="nav-item nav-link" href="{% url 'PDFreport' %}">  PDF report2</a>
+                     <a class="nav-item nav-link" href="{% url 'apiclient' %}"> API Client</a>
+                     <a class="nav-item nav-link" href="{% url 'csv_reader' %}"> CSV File Read</a>
+                     <a class="nav-item nav-link" href="{% url 'Change_pwd' %}"> change Password</a>
+
+
+                     {% else %}
+                    <a class="nav-item nav-link" href="{% url 'register' %}">Sign up</a>
+                    <a class="nav-item nav-link"  href="{% url 'login' %}">login</a>
+                       <a class="nav-item nav-link" href="{% url 'login_new' %}"> new login</a>
+                    {% endif %}
+                </div>
+
+
+             </div>
+
+             <div class="col-10 bg-secondary">
+
+                 <div class="p-3 mb-2 bg-secondary text-white bg-gradient-success">
+                         {% block body%}
+
+                         {% endblock %}
+                 </div>
+             </div>
+
+
+       </div>
+
+  </div>
+
+
+
+  </body>
+</html>

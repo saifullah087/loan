@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+
+
+{% block body %}
+
+
+<form  class="form-inline" action="." method="POST">
+    {% csrf_token %}
+
+ <div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Left addon</span>
+  </div>
+    <input type="text" class="form-control" name="title" placeholder="Title" value="">
+    <input type="text" class="form-control" name="phone" placeholder="Phone" value="">
+    <input type="submit" value="save"/>
+
+</div>
+
+
+</form>
+
+{% endblock %}
+
+

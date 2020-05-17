@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+<tit>Sample Entry Form</tit>
+<head>Its heading</head>
+
+
+ {% block body %}
+<form target="upload_frame" action="" method="post" enctype="multipart/form-data" >
+ {% csrf_token %}
+    {{ form.as_p }}<br>
+    <input type="submit" name="submit" value="Upload" id="submit">
+</form>
+{% endblock body %}

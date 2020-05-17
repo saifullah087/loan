@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+
+
+{% block body %}
+
+<h1>Edit blog</h1>
+<form action="{% url 'blog_edit' blog.pk %}"
+      method="post">
+     <input type="number" step = "any" id="searchBox" class="input-medium search-query" name="pk" placeholder="Desired Loan"><br>
+     <input type="text" class="form-control" id="city" placeholder="" value="" name='city'>
+      {% csrf_token %}
+      {{ form.as_p }}
+<button class="button" type="submit">Update</button>
+</form>
+
+{% endblock %}
